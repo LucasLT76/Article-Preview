@@ -1,0 +1,98 @@
+body {
+  background-color: rgba(105, 185, 185, 0.386);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: whitesmoke;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  max-width: 55%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.container img {
+  width: 40%;
+  object-fit: cover;
+}
+
+.info {
+  position: relative; /* 🔑 important */
+  padding: 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin-top: 20px;
+}
+
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.share-btn {
+  position: fixed;
+  right: 25%;
+  border: none;
+  background: hsl(212, 61%, 68%); 
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer; 
+}
+.share-btn svg {
+  fill: whitesmoke; /* default */
+  transition: fill 0.3s ease;
+}
+.share-btn:hover{
+    width: 50px;
+    height: 50px;
+    transform: scale(1);
+}
+#share-menu {
+  display: none; /* hidden by default */
+  position: absolute;
+  bottom: 110px;
+  right: 15px;
+  background: hsl(217, 19%, 35%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#share-menu.active {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#share-menu p {
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+#share-menu img {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#share-menu img:hover {
+  transform: scale(1.2);
+}
